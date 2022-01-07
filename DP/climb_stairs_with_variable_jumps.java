@@ -19,8 +19,7 @@ public class Main {
             for (int j  = 1; j <= arr[i] && i + j < dp.length; j++){
                 dp[i] += dp[i+j];
             }
-        }
-        
+        }    
         System.out.println(dp[0]);
     }
 }
