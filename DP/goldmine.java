@@ -16,14 +16,15 @@ public class Main {
         }
         
         int[][] dp = new int[row][col];
-        for (int i = row-1; i >= 0; i--){
-            for (int j = col-1; j >= 0; j--){
+        for (int j = col-1; j >= 0; j--){  // First iterating over col
+            for (int i = row-1; i >= 0; i--){ // Iterating overl row
                 if (j == col-1){
                     dp[i][j] = arr[i][j];
                 }
                 else{
                     if (i == 0){
                         dp[i][j] = arr[i][j] + Math.max(dp[i][j+1], dp[i+1][j+1]);
+                        
                     }
                     else if(i == row-1 ){
                         dp[i][j] = arr[i][j] + Math.max(dp[i][j+1], dp[i-1][j+1]);
